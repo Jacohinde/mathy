@@ -48,6 +48,7 @@
           </div>
         </div>
         <div class="scri2" >
+            <div class="klin">Limpiar</div>
           <header id="talla2">
             <h3><u>Registro de Operaciones</u></h3><br>
             <p id="reg"></p>
@@ -64,11 +65,17 @@ var p = document.getElementById('trada');
 var reg = document.getElementById('reg');
 var relo = document.getElementById('talla2');
 
-document.addEventListener("keypress", myFunction);
+document.addEventListener("keydown", myFunction);
 function myFunction() {
   var x = event.which || event.keyCode;
   var y = event.key;
-  if(x >= 48 && x<=57){
+  if(x==110||x==190){
+      boto();
+  }
+  if(x==8){
+      dela();
+  }
+  if(x >= 48 && x<=57||x >= 97 && x<=105){
     boti(y);
   }
   if(x==13){
@@ -80,7 +87,7 @@ function dela(){
   var gea = document.getElementById('trada').value;
   document.getElementById('trada').value = gea.substring(-1, gea.length-1);
 }
-      function opio(v){
+function opio(v){
         var gea = document.getElementById('trada').value;
         lolo = v;
         p.value = "";
